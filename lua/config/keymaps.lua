@@ -20,3 +20,19 @@ vim.api.nvim_set_keymap('n', '<Leader>8', ':BufferGoto 8<CR>', { noremap = true,
 vim.api.nvim_set_keymap('n', '<Leader>9', ':BufferGoto 9<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>0', ':BufferLast<CR>', { noremap = true, silent = true })
 
+-- Telescope
+vim.api.nvim_set_keymap('n', '<Leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>fg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>fb', ':Telescope buffers<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>fh', ':Telescope help_tags<CR>', { noremap = true, silent = true })
+
+-- Theme switcher
+vim.api.nvim_set_keymap('n', '<Leader>tt', ':lua apply_theme("onedark")<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>tg', ':lua apply_theme("gruvbox")<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>te', ':lua apply_theme("everforest")<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>tn', ':lua apply_theme("nord")<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>td', ':lua apply_theme("dracula")<CR>', { noremap = true, silent = true })
+
+-- Homepage
+vim.api.nvim_set_keymap('n', '<Leader>şş', ':Dashboard<CR>', { noremap = true, silent = true })
+

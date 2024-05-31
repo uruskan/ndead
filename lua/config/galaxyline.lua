@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
 
   -- Status line
   use 'nvim-lualine/lualine.nvim'
+  use 'glepnir/galaxyline.nvim'
 
   -- Syntax Highlighting
   use 'nvim-treesitter/nvim-treesitter'
@@ -35,10 +36,16 @@ return require('packer').startup(function(use)
   use 'dracula/vim'
   use 'sainnhe/everforest'
   use 'arcticicestudio/nord-vim'
-  use 'gruvbox-community/gruvbox'
 
   -- Homepage Dashboard
   use 'glepnir/dashboard-nvim'
+
+  -- Telescope
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Other useful plugins can be added here
 end)

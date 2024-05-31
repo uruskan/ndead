@@ -1,38 +1,63 @@
 -- lua/config/packer.lua
 
-return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+local package_root = vim.fn.stdpath('data') .. '/site/pack'
+local install_path = package_root .. '/packer/start/packer.nvim'
 
-  -- LSP and Autocompletion
-  use 'neovim/nvim-lspconfig'
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'saadparwaiz1/cmp_luasnip'
-  use 'L3MON4D3/LuaSnip'
+return require('packer').startup({
+  function(use)
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-  -- File Explorer
-  use 'kyazdani42/nvim-tree.lua'
-  use 'kyazdani42/nvim-web-devicons' -- optional, for file icon
+    -- LSP and Autocompletion
+    use 'neovim/nvim-lspconfig'
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'L3MON4D3/LuaSnip'
 
-  -- Terminal
-  use 'akinsho/toggleterm.nvim'
+    -- File Explorer
+    use 'kyazdani42/nvim-tree.lua'
+    use 'kyazdani42/nvim-web-devicons' -- optional, for file icon
 
-  -- Status line
-  use 'nvim-lualine/lualine.nvim'
+    -- Terminal
+    use 'akinsho/toggleterm.nvim'
 
-  -- Syntax Highlighting
-  use 'nvim-treesitter/nvim-treesitter'
+    -- Status line
+    use 'nvim-lualine/lualine.nvim'
+    use 'glepnir/galaxyline.nvim'
 
-  -- Tabs
-  use 'romgrk/barbar.nvim'
+    -- Syntax Highlighting
+    use 'nvim-treesitter/nvim-treesitter'
 
-  -- Themes
-  use 'morhetz/gruvbox'
-  use 'joshdick/onedark.vim'
+    -- Tabs
+    use 'romgrk/barbar.nvim'
 
-  -- Other useful plugins can be added here
-end)
+    -- Themes
+    
+    use 'joshdick/onedark.vim'
+    use 'dracula/vim'
+    use 'sainnhe/everforest'
+    use 'arcticicestudio/nord-vim'
+
+    -- Homepage Dashboard
+    use 'glepnir/dashboard-nvim'
+
+    -- Telescope
+    use {
+      'nvim-telescope/telescope.nvim',
+      tag = '0.1.4',
+      requires = { 'nvim-lua/plenary.nvim' }
+    }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+    -- Other useful plugins can be added here
+  end,
+  config = {
+    package_root = package_root,
+    compile_path = install_path .. '/plugin/packer_compiled.lua',
+    display = { non_interactive = true },
+  },
+})
 
